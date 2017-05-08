@@ -6,7 +6,9 @@
 package calculadora;
 
 import java.awt.BorderLayout;
-/* 
+
+
+/**
 *Examen Documentacion:
 *@author Marcelo Espinola Rodriguez
 *@version 1.0.0
@@ -230,7 +232,12 @@ display.sleep();
 }
 }
 }
- 
+ /**
+  * 
+  * Ni recoge ni retorna nada 
+  * Pero se encarga de inicializar variables.
+  * 
+  */
 public void inicialitza() {
 operacio = "null";
 valor1 = 0;
@@ -239,18 +246,41 @@ mode = MODE_ENTRADA;
 inicialitza_resultat = true;
 }
  
+
+/**
+ * 
+ * 
+ * @return el resultado en valor de texto
+ * 
+ */
 public String getResultatString (){
 return text_resultat.getText();
 }
  
+
 public void setResultatString(String s){
 text_resultat.setText(s);
 }
+
+/**
+ * 
+ * 
+ * @return el resultado en valor numerico
+ * 
+ * 
+ */
  
 public int getResultatInt() {
 String resultat = text_resultat.getText();
 return Integer.parseInt(resultat);
 }
+
+/** 
+ * 
+ * 
+ * 
+ * @param digit afegeix un nou digit al camp text_resultat
+ */
  
 public void afageixNouDigit(int digit){
 if (inicialitza_resultat)
@@ -269,6 +299,12 @@ setResultatString(inputString + digit);
 mode = MODE_ENTRADA;
 inicialitza_resultat = false;
 }
+
+/**
+ * 
+ * 
+ * @param new_operacio la operacion que se desea realizar
+ */
  
 public void executarOperador(String new_operacio) {
  
@@ -292,6 +328,14 @@ inicialitza_resultat = true;
 operacio = new_operacio;
 }
  
+
+/**
+ * 
+ * No tiene parametros ni devuelve nada.
+ * 
+ * 
+ * 
+ */
 public void executarIgual(){
 int resultat = 0;
  
@@ -301,6 +345,14 @@ mostraResultat(resultat);
  
 operacio = "null";
 }
+
+
+/**
+ * 
+ * Recoge un int cualquiera
+ * 
+ * @return Devuelve el resultado de la operacion.
+ */
  
 public int executarOperacio() {
 int resultat = 0;
@@ -331,6 +383,12 @@ resultat = valor1 + valor2;
  
 return resultat;
 }
+
+/**
+ * 
+ * @param resultat el resultado de la operacion
+ * 
+ */
  
 public void mostraResultat(int resultat){
 setResultatString(Integer.toString(resultat));
@@ -338,7 +396,11 @@ valor1 = resultat;
 mode = MODE_RESULTAT;
 inicialitza_resultat = true;
 }
- 
+ /**
+  * 
+  * 
+  * @param args Inici en l'execucio de la calculadora
+  */
 public static void main(String args[]) {
 Calculadora calculadora = new Calculadora(true);
 }
