@@ -3,19 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javaapplication42;
+package calculadora;
 
-/**
- *
- * @author alumne
- */
-public class JavaApplication42 {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // Constants
+import java.awt.BorderLayout;
+/* 
+*Examen Documentacion:
+*@author Marcelo Espinola Rodriguez
+*@version 1.0.0
+*/
+ 
+public class Calculadora {
+ 
+// Constants
 final int MAX_DIGITS = 5;
 final int MODE_ENTRADA = 0;
 final int MODE_RESULTAT = 1;
@@ -232,10 +231,7 @@ display.sleep();
 }
 }
  
-    /**
-     *
-     */
-    public void inicialitza() {
+public void inicialitza() {
 operacio = "null";
 valor1 = 0;
 valor2 = 0;
@@ -247,11 +243,7 @@ public String getResultatString (){
 return text_resultat.getText();
 }
  
-    /**
-     *
-     * @param s
-     */
-    public void setResultatString(String s){
+public void setResultatString(String s){
 text_resultat.setText(s);
 }
  
@@ -259,11 +251,7 @@ public int getResultatInt() {
 String resultat = text_resultat.getText();
 return Integer.parseInt(resultat);
 }
- /**
-  * 
-  * 
-  * @param digit afegeix un nou digit al camp text_resultat
-  */
+ 
 public void afageixNouDigit(int digit){
 if (inicialitza_resultat)
 setResultatString("");
@@ -282,10 +270,6 @@ mode = MODE_ENTRADA;
 inicialitza_resultat = false;
 }
  
-/**
- * 
- * @param 
- */
 public void executarOperador(String new_operacio) {
  
 int resultat;
@@ -307,9 +291,7 @@ valor1 = resultat;
 inicialitza_resultat = true;
 operacio = new_operacio;
 }
- /**
-  * 
-  */
+ 
 public void executarIgual(){
 int resultat = 0;
  
@@ -357,13 +339,8 @@ mode = MODE_RESULTAT;
 inicialitza_resultat = true;
 }
  
-    /**
-     *
-     * @param args
-     */
-    public static void main(String args[]) {
+public static void main(String args[]) {
 Calculadora calculadora = new Calculadora(true);
 }
-    }
-    
+ 
 }
