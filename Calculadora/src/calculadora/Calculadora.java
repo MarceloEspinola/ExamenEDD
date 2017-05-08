@@ -248,7 +248,8 @@ inicialitza_resultat = true;
 /**
  * 
  * 
- * @return el resultado en valor de texto
+ * @return text_resultat
+ * Devuelve el resultado en valor de texto
  * 
  */
 public String getResultatString (){
@@ -263,7 +264,8 @@ text_resultat.setText(s);
 /**
  * 
  * 
- * @return el resultado en valor numerico
+ * @return resultat
+ * Devuelve el resultado en valor numerico
  * 
  * 
  */
@@ -275,9 +277,9 @@ return Integer.parseInt(resultat);
 
 /** 
  * 
+ * @param digit 
  * 
- * 
- * @param digit afegeix un nou digit al camp text_resultat
+ * Afegeix un nou digit al camp text_resultat
  */
  
 public void afageixNouDigit(int digit){
@@ -301,7 +303,9 @@ inicialitza_resultat = false;
 /**
  * 
  * 
- * @param new_operacio la operacion que se desea realizar
+ * @param new_operacio 
+ * 
+ * Execucio de la operacio que pot ser una suma....
  */
  
 public void executarOperador(String new_operacio) {
@@ -330,6 +334,7 @@ operacio = new_operacio;
 /**
  * 
  * No tiene parametros ni devuelve nada.
+ * Al finalitzar el calcul s'executa la darrera operacio especificada i es visualitza el resultat
  * 
  * 
  * 
@@ -397,7 +402,9 @@ inicialitza_resultat = true;
  /**
   * 
   * 
-  * @param args Inici en l'execucio de la calculadora
+  * @param args 
+  * 
+  * Inici en l'execucio de la calculadora
   */
 public static void main(String args[]) {
 Calculadora calculadora = new Calculadora(true);
